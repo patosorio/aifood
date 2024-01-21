@@ -21,19 +21,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <!-- Just an image -->
-                    {% if session['is_admin'] %}
-                    <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
-                        <input type="file" name="image" required>
-                        <input type="submit" value="Upload">
-                    </form>
-                    {% endif %}
                     <nav class="navbar navbar-light bg-light">
                         <a class="navbar-brand" href="{{ url_for('upload_form') }}">
                             <i class="fa-solid fa-upload"></i>
                         </a>
                     </nav>
-                    <h1>Worked Upgrade!</h1>
+                    <h1>Upload Image</h1>
+                    <!-- Just an image -->
+                    <form action="/upload_image" method="post" enctype="multipart/form-data">
+                        <label for="image">Choose an image to upload:</label>
+                        <input type="file" name="image" id="image">
+                        <input type="submit" value="Upload">
+                    </form>
                 </div>
             </div>
         </div>
